@@ -4,6 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import 'animate.css'
+import 'font-awesome/scss/font-awesome.scss'
+import '@/assets/scss/custom.scss'
 window.$ = window.jQuery = require('jquery')
 require('bootstrap')
 
