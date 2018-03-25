@@ -1,5 +1,5 @@
 <template>
-  <aside class="menu app-sidebar bg-dark">
+  <aside class="menu app-sidebar bg-dark" :class="{ hide: $store.state.aside }">
     <p class="menu-label">
       General
     </p>
@@ -47,14 +47,14 @@ export default {
 
 <style lang="scss" scoped>
 .app-sidebar {
-  position: absolute;
+  position: fixed;
   top: 52px;
   left: 0;
   bottom: 0;
   padding: 10px 0 0 0;
   width: 240px;
   min-width: 45px;
-  max-height: 100vh;
+  min-height: 100vh;
   z-index: 1023;
   overflow-y: hidden;
   overflow-x: hidden;
@@ -105,5 +105,9 @@ export default {
 .app-sidebar:hover {
   overflow-y: auto;
   overflow-x: hidden;
+}
+
+.hide {
+  display: none;
 }
 </style>

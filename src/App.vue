@@ -2,7 +2,7 @@
   <div>
     <navbar/>
     <navside/>
-    <main>
+    <main class="container-fluid" :class="{ toggle: !$store.state.aside }">
       <router-view/>
     </main>
   </div>
@@ -21,5 +21,10 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@media (min-width: 768px) {
+  .toggle {
+    padding-left: 255px;
+  }
+}
 </style>

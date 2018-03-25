@@ -3,7 +3,7 @@
     <a class="navbar-brand" href="/">
       <img src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
     </a>
-    <a class="burger"><i class="fa fa-bars"></i></a>
+    <a class="burger" @click="asideToggle"><i class="fa fa-bars"></i></a>
 
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav ml-auto">
@@ -34,6 +34,11 @@
 
 <script>
 export default {
+  methods: {
+    asideToggle () {
+      this.$store.commit('aside')
+    }
+  }
 }
 </script>
 
