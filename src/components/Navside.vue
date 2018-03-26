@@ -4,25 +4,41 @@
       General
     </p>
     <ul class="menu-list">
-      <li><router-link to="#" exact>Dashboard</router-link></li>
+      <li><router-link to="/" exact>Dashboard</router-link></li>
     </ul>
     <p class="menu-label">
       Administration
     </p>
     <ul class="menu-list">
-      <li><router-link to="#">Dota 2</router-link></li>
+      <li><router-link to="/brand">Brand</router-link></li>
       <li>
-        <a :aria-expanded="expanded" @click="Expanded">
-          Manage Your Team
+        <a :aria-expanded="expanded1" @click="Expanded(0)">
+          Product
           <span class="icon is-angle">
             <i class="fa fa-angle-up"></i>
           </span>
         </a>
         <transition enter-active-class="animated fadeInDown" leave-active-class="animated fadeOutUp">
-          <ul v-show="expanded">
+          <ul v-show="expanded1">
             <li><a>Members</a></li>
             <li><a>Plugins</a></li>
             <li><a>Add a member</a></li>
+          </ul>
+        </transition>
+      </li>
+      <li><router-link to="#">Demo</router-link></li>
+      <li>
+        <a :aria-expanded="expanded2" @click="Expanded(1)">
+          Demo Dropdown
+          <span class="icon is-angle">
+            <i class="fa fa-angle-up"></i>
+          </span>
+        </a>
+        <transition enter-active-class="animated fadeInDown" leave-active-class="animated fadeOutUp">
+          <ul v-show="expanded2">
+            <li><a>Dropdown 1</a></li>
+            <li><a>Dropdown 2</a></li>
+            <li><a>Dropdown 3</a></li>
           </ul>
         </transition>
       </li>
@@ -34,12 +50,17 @@
 export default {
   data () {
     return {
-      expanded: false
+      expanded1: false,
+      expanded2: false
     }
   },
   methods: {
-    Expanded () {
-      this.expanded = !this.expanded
+    Expanded (num) {
+      this.$store.commit('expanded', {
+        index: num
+      })
+      this.expanded1 = this.$store.state.expanded[0]
+      this.expanded2 = this.$store.state.expanded[1]
     }
   }
 }

@@ -5,11 +5,15 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    aside: false
+    aside: false,
+    expanded: [false, false]
   },
   mutations: {
     aside (state) {
       state.aside = !state.aside
+    },
+    expanded (state, payload) {
+      state.expanded[payload.index] = !state.expanded[payload.index]
     }
   }
 })

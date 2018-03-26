@@ -9,6 +9,7 @@ import 'bootstrap/scss/bootstrap.scss'
 import 'animate.css'
 import 'font-awesome/scss/font-awesome.scss'
 import '@/assets/scss/custom.scss'
+import './plugins/vue-table.js'
 window.$ = window.jQuery = require('jquery')
 require('bootstrap')
 

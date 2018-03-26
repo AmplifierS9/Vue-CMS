@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import home from '@/pages/home'
+const home = () => import('@/pages/home')
+const brand = () => import('@/pages/brand.vue')
 
 Vue.use(Router)
 
@@ -9,8 +10,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: 'Home',
       component: home
+    },
+    {
+      name: 'Brand',
+      path: '/brand',
+      component: brand
     }
   ]
 })
